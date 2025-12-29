@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>SHU 智能导航</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    
+    <style>
+        .select2-container--open { z-index: 10000; } 
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+
+    <div id="controls">
+        <h2 class="app-title"><i class="fas fa-graduation-cap"></i> 上大校园导航</h2>
+        
+        <div class="section-box">
+            <div class="control-row">
+                <label><i class="far fa-clock"></i> 出发时间:</label>
+                <div class="radio-group">
+                    <input type="radio" id="t-auto" name="time-mode" value="auto" checked> <label for="t-auto">当前</label>
+                    <input type="radio" id="t-man" name="time-mode" value="manual"> <label for="t-man">手动</label>
+                </div>
+            </div>
+            <input type="time" id="time-input" disabled style="width:100%; margin-top:5px;">
+        </div>
+
+        <div class="tabs">
+            <button class="tab-btn active" data-mode="standard">点对点导航</button>
+            <button class="tab-btn" data-mode="tour">多点漫步</button>
+        </div>
+
+        <div id="panel-standard">
+            <div class="input-group">
+                <span class="dot start">起</span>
+                <select id="sel-start" class="poi-select">
+                    <option></option>
+                    <option value="CURRENT_LOCATION">📍 我的当前位置</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <span class="dot end">终</span>
+                <select id="sel-end" class="poi-select">
+                    <option></option>
+                    <option value="CURRENT_LOCATION">📍 我的当前位置</option>
+                </select>
+            </div>
+            
+            <div class="control-row mode-select">
+                <button id="btn-walk" class="mode-btn active" data-mode="walk"><i class="fas fa-walking"></i> 步行</button>
+                <button id="btn-bike" class="mode-btn" data-mode="bike"><i class="fas fa-biking"></i> 骑行</button>
+            </div>
+
+            <div id="res-standard" class="result-box">请选择起点和终点</div>
+        </div>
+
+        <div id="panel-tour" style="display:none;">
+            <div class="input-group">
+                <span class="dot start">起</span>
+                <select id="sel-tour-start" class="poi-select">
+                    <option></option>
+                    <option value="CURRENT_LOCATION">📍 我的当前位置</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <span class="dot stop">加</span>
+                <select id="sel-tour-add" class="poi-select"><option></option></select>
+            </div>
+            
+            <div class="stops-list-container">
+                <ul id="tour-list"></ul>
+            </div>
+            
+            <div class="control-row">
+                <select id="tour-mode" style="flex:1;">
+                    <option value="walk">步行漫游</option>
+                    <option value="bike">骑行漫游</option>
+                </select>
+                <button id="btn-tour-go" class="action-btn">开始规划</button>
+            </div>
+            <div id="res-tour" class="result-box"></div>
+        </div>
+
+        <div class="footer-tools">
+            <button id="btn-reset-view"><i class="fas fa-crosshairs"></i> 复位</button>
+            <button id="btn-clear-all"><i class="fas fa-trash"></i> 清空</button>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
