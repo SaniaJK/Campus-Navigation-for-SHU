@@ -23,7 +23,7 @@
 
 ## 📖 项目简介
 
-**SHU Campus Navigation** 是一个前后端分离的 Web 校园导航应用。与传统地图软件不同，本项目完全基于 **OpenStreetMap (OSM)** 原始数据进行解析，构建了自定义的校园拓扑路网。
+**Campus Navigation for SHU** 是一个前后端分离的 Web 校园导航应用。与传统地图软件不同，本项目完全基于 **OpenStreetMap (OSM)** 原始数据进行解析，构建了自定义的校园拓扑路网。
 
 系统不仅支持基础的点对点最短路径规划，还针对校园场景实现了**多点漫游（TSP近似解）**，并引入了**时间维度的交通潮汐模拟**（如上课高峰期骑行拥堵判定），为师生提供更加智能、贴合实际的出行建议。
 
@@ -65,7 +65,7 @@
 
 1.  **克隆项目**
     ```bash
-    git clone [https://github.com/你的用户名/SHU-Smart-Campus-Navigation.git](https://github.com/你的用户名/SHU-Smart-Campus-Navigation.git)
+    git clone [https://github.com/SaniaJK/Campus-Navigation-for-SHU.git](https://github.com/SaniaJK/Campus-Navigation-for-SHU.git)
     cd SHU-Smart-Campus-Navigation
     ```
 
