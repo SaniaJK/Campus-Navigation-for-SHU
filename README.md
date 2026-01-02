@@ -1,5 +1,5 @@
 <div align="center">
-  <h1>🗺️ SHU 校园智能导航系统</h1>
+  <h1>🗺️ 上海大学校园智能导航系统</h1>
   <p>
     <b>基于 OpenStreetMap 数据与 Flask 框架的校园路径规划与漫游系统</b>
   </p>
